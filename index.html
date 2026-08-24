@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김하경 | JAS 인천공항 | 김포공항 공항서비스직 채용 포트폴리오</title>
+<style>
+  :root{
+    --orange:#F15922;
+    --orange-dark:#D94A15;
+    --orange-tint:#FDEDE6;
+    --ink:#1A1A1A;
+    --gray:#6B7280;
+    --line:#E5E7EB;
+    --bg-soft:#F4F5F6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: "Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+
+  /* ===== Nav ===== */
+  .site-nav{border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;height:76px;}
+  .logo{font-size:22px;font-weight:800;color:var(--orange);letter-spacing:-.02em;display:flex;align-items:baseline;gap:8px;}
+  .logo .logo-sub{font-size:11px;font-weight:700;color:var(--gray);letter-spacing:.12em;}
+  .site-nav nav{display:flex;gap:36px;}
+  .site-nav nav a{font-size:14.5px;font-weight:600;color:#3A3A3A;}
+  .site-nav nav a:hover{color:var(--orange);}
+
+  /* ===== Page title block ===== */
+  .page-title-block{padding:56px 0 30px;}
+  .title-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;}
+  .page-title-block h1{font-size:32px;font-weight:800;color:var(--ink);line-height:1.35;}
+  .breadcrumb{font-size:13px;color:var(--gray);white-space:nowrap;padding-bottom:4px;}
+  .breadcrumb b{color:var(--orange-dark);}
+  .divider-full{height:1px;background:var(--line);margin-top:26px;}
+
+  section{padding:64px 0;}
+  section.soft{background:var(--bg-soft);}
+  .sec-label{color:var(--orange);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .sec-head{margin-bottom:32px;}
+  .sec-head h2{font-size:25px;font-weight:800;color:var(--ink);}
+  .sec-head p.sub{color:var(--gray);font-size:14.5px;margin-top:8px;max-width:640px;}
+
+  /* ===== Profile hero (기업개요 style) ===== */
+  .profile-hero{padding-top:52px;}
+  .hero-banner{position:relative;display:flex;height:420px;border-radius:6px;overflow:hidden;background:var(--bg-soft);}
+  .hero-banner .photo{flex:0 0 340px;height:100%;overflow:hidden;}
+  .hero-banner .photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%;}
+  .hero-banner .panel{flex:1;position:relative;}
+  .hero-quote{
+    position:absolute;top:50%;left:-70px;right:40px;transform:translateY(-50%);
+    background:var(--orange);color:#fff;border-radius:8px;
+    padding:34px 38px;box-shadow:0 22px 44px rgba(209,74,21,.28);
+  }
+  .hero-quote .qmark{font-size:46px;font-weight:800;line-height:.4;opacity:.8;margin-bottom:8px;font-family:Georgia,serif;}
+  .hero-quote .qsmall{font-size:23px;font-weight:800;margin-bottom:8px;opacity:.95;line-height:1.4;}
+  .hero-quote .qbig{font-size:23px;font-weight:800;line-height:1.4;}
+  .timeline-row{
+    display:flex;align-items:center;gap:10px;margin-top:22px;font-size:14px;color:var(--gray);font-weight:600;
+  }
+  .timeline-row .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px var(--orange-tint);}
+  .timeline-row b{color:var(--orange-dark);font-weight:800;}
+
+  .pitch-box{margin-top:34px;font-size:15.5px;color:#3A3A3A;max-width:760px;}
+  .pitch-box strong{color:var(--ink);}
+  .hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+  .hero-tags span{
+    background:var(--orange-tint);color:var(--orange-dark);
+    padding:7px 14px;border-radius:6px;font-size:12.5px;font-weight:700;
+  }
+
+  /* ===== Info fact bar ===== */
+  .factbar{
+    margin-top:40px;
+    display:flex;background:var(--bg-soft);border-radius:6px;overflow:hidden;
+  }
+  .fact-seg{flex:1;padding:20px 26px;border-right:1px solid var(--line);}
+  .fact-seg:last-child{border-right:none;}
+  .fact-seg .label{font-size:11px;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;font-weight:700;}
+  .fact-seg .val{font-size:15px;font-weight:800;color:var(--ink);}
+  .fact-seg .val.orange{color:var(--orange-dark);}
+
+  /* ===== strength cards ===== */
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:26px 22px;
+  }
+  .card .icon{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--orange-tint);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--orange-dark);font-size:18px;font-weight:800;margin-bottom:16px;
+  }
+  .card h3{font-size:15.5px;font-weight:800;margin-bottom:8px;color:var(--ink);}
+  .card p{font-size:13px;color:var(--gray);}
+
+  /* ===== career ===== */
+  .career-item{
+    display:flex;gap:24px;
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:28px 30px;margin-bottom:16px;
+  }
+  .career-period{
+    flex:0 0 160px;
+    font-size:13px;color:var(--gray);font-weight:600;
+    border-right:1px solid var(--line);padding-right:22px;
+  }
+  .career-period .co{display:block;font-size:16px;font-weight:800;color:var(--ink);margin-bottom:6px;}
+  .career-period .role-tag{
+    display:inline-block;margin-top:10px;
+    background:var(--orange-tint);color:var(--orange-dark);
+    font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:5px;
+  }
+  .career-body{flex:1;}
+  .career-body h4{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:10px;}
+  .career-body ul{list-style:none;}
+  .career-body li{
+    position:relative;padding-left:16px;margin-bottom:7px;font-size:13.8px;color:#3A3A3A;
+  }
+  .career-body li::before{
+    content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--orange);
+  }
+  .career-body .result{color:var(--orange-dark);font-weight:700;}
+
+  /* ===== experience grid ===== */
+  .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .exp-card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 26px;
+  }
+  .exp-card .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:10px;}
+  .exp-card h4{font-size:15px;font-weight:800;color:var(--ink);}
+  .exp-card .period{font-size:11.5px;color:var(--gray);background:var(--bg-soft);padding:4px 9px;border-radius:5px;white-space:nowrap;font-weight:700;}
+  .exp-card p{font-size:13.3px;color:var(--gray);}
+  .exp-card .tagrow{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;}
+  .exp-card .tagrow span{font-size:11px;color:var(--orange-dark);background:var(--orange-tint);padding:3px 8px;border-radius:5px;font-weight:700;}
+
+  /* ===== certificates ===== */
+  .cert-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  .cert-table th{
+    background:var(--bg-soft);color:var(--ink);font-size:12.5px;text-align:left;
+    padding:13px 18px;letter-spacing:.03em;font-weight:800;
+  }
+  .cert-table td{
+    padding:14px 18px;font-size:13.8px;border-bottom:1px solid var(--line);color:#3A3A3A;
+  }
+  .cert-table tr:last-child td{border-bottom:none;}
+  .cert-table td.name{font-weight:700;color:var(--ink);}
+  .pill-fit{
+    display:inline-block;font-size:10.5px;font-weight:800;color:#fff;
+    background:var(--orange);padding:2px 8px;border-radius:999px;margin-left:8px;
+  }
+  .pill-plan{
+    display:inline-block;font-size:10.5px;font-weight:800;color:var(--orange-dark);
+    background:#fff;border:1px solid var(--orange);padding:1px 8px;border-radius:999px;margin-left:8px;
+  }
+  .note-line{margin-top:14px;font-size:13px;color:var(--gray);}
+  .note-line b{color:var(--orange-dark);}
+
+  /* ===== closing (quote callout style) ===== */
+  .closing-quote{
+    position:relative;
+    background:var(--orange);
+    color:#fff;border-radius:10px;padding:48px 52px;
+  }
+  .closing-quote .qmark{font-size:56px;font-weight:800;line-height:.3;opacity:.75;margin-bottom:10px;font-family:Georgia,serif;}
+  .closing-quote h3{font-size:24px;font-weight:800;margin-bottom:16px;line-height:1.45;}
+  .closing-quote p{color:#FFE8DC;font-size:14.5px;max-width:640px;}
+  .closing-stats{
+    margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  }
+  .closing-stats .st{
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:16px 18px;
+  }
+  .closing-stats .st .k{font-size:11.5px;color:var(--gray);font-weight:700;margin-bottom:6px;}
+  .closing-stats .st .v{font-size:15px;font-weight:800;color:var(--orange-dark);}
+
+  footer{
+    background:#fff;border-top:1px solid var(--line);
+    padding:26px 0;text-align:center;color:var(--gray);font-size:12.5px;
+  }
+  footer b{color:var(--ink);}
+
+  @media (max-width:860px){
+    .grid4{grid-template-columns:repeat(2,1fr);}
+    .exp-grid{grid-template-columns:1fr;}
+    .career-item{flex-direction:column;}
+    .career-period{border-right:none;border-bottom:1px solid var(--line);padding-right:0;padding-bottom:14px;margin-bottom:14px;flex:auto;}
+    .factbar{flex-direction:column;}
+    .fact-seg{border-right:none;border-bottom:1px solid var(--line);}
+    .fact-seg:last-child{border-bottom:none;}
+    .hero-banner{flex-direction:column;height:auto;}
+    .hero-banner .photo{flex:none;width:100%;height:320px;}
+    .hero-banner .panel{min-height:220px;}
+    .hero-quote{position:static;transform:none;margin:20px;left:auto;right:auto;}
+    .closing-stats{grid-template-columns:repeat(2,1fr);}
+    .wrap{padding:0 18px;}
+    .site-nav nav{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <div class="logo">김하경<span class="logo-sub">PORTFOLIO</span></div>
+      <nav>
+        <a href="#profile">소개</a>
+        <a href="#strengths">핵심역량</a>
+        <a href="#career">경력</a>
+        <a href="#certs">자격증</a>
+        <a href="#closing">지원동기</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-title-block">
+    <div class="wrap">
+      <div class="title-row">
+        <h1>인천공항 | 김포공항 공항서비스직<br>지원 포트폴리오</h1>
+        <div class="breadcrumb">포트폴리오 &gt; <b>지원자 소개</b></div>
+      </div>
+    </div>
+    <div class="wrap"><div class="divider-full"></div></div>
+  </div>
+
+  <main>
+
+    <section id="profile" class="profile-hero">
+      <div class="wrap">
+        <div class="sec-label">지원자 개요</div>
+
+        <div class="hero-banner">
+          <div class="photo">
+            <img src="assets/profile.jpg" alt="김하경 프로필 사진">
+          </div>
+          <div class="panel">
+            <div class="hero-quote">
+              <div class="qmark">"</div>
+              <p class="qsmall">안전과 원칙을 가치로</p>
+              <p class="qbig">최상의 조업서비스를 제공하는 <span style="color:#fff;">김하경</span>입니다</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-row"><span class="dot"></span> 2026.08 · <b>JAS</b> 인천공항 | 김포공항 공항서비스직 지원</div>
+
+        <div class="pitch-box">
+          호텔 프런트·예약 데이터 관리와 대규모 행사 현장 운영을 경험하며, 승객의 작은 불편도 먼저 살피는 <strong>서비스 마인드</strong>와 정확한 절차 준수 습관을 쌓았습니다.
+          JAS의 체크인·수하물·출도착 안내 업무에 바로 기여할 수 있는 실무형 인재입니다.
+        </div>
+        <div class="hero-tags">
+          <span>TOPAS 항공예약 2급</span>
+          <span>CS Leaders 관리사</span>
+          <span>TOEIC Speaking IH</span>
+          <span>응급처치 일반과정 수료</span>
+          <span>HSK·JLPT 취득 예정</span>
+        </div>
+
+        <div class="factbar">
+          <div class="fact-seg">
+            <div class="label">Applicant</div>
+            <div class="val">김하경</div>
+          </div>
+          <div class="fact-seg">
+            <div class="label">Position</div>
+            <div class="val orange">공항서비스직 (지상조업)</div>
+          </div>
+          <div class="fact-seg">
+            <div class="label">Core Skill</div>
+            <div class="val">체크인 · 수하물 · CS · 안전관리</div>
+          </div>
+          <div class="fact-seg">
+            <div class="label">Language</div>
+            <div class="val">한국어 · English (Speaking IH), 일본어 회화 가능</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-label">Profile Summary</div>
+          <h2>지원 직무와 맞닿아 있는 이유</h2>
+          <p class="sub">JAS 공항서비스직 주요업무(체크인 서비스·수하물 서비스·출도착 안내·EDI 업무)와 맞춰 준비한 역량입니다.</p>
+        </div>
+        <div class="pitch-box" style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:32px 36px;margin-top:0;max-width:none;">
+          하얏트 제주 드림타워에서 <strong>성수기 예약 데이터를 3단계 크로스 체크하며 오배송·전달지연 0건</strong>을 달성한 경험은 JAS의 EDI·발권 업무가 요구하는 <strong>정확성과 꼼꼼함</strong>과 직접 연결됩니다.
+          켄싱턴 호텔 프런트 실습과 아태 컨퍼런스 안내데스크 운영을 통해 <strong>현장에서 즉각적으로 고객을 응대하고 동선을 안내하는 감각</strong>을 익혔으며, CS Leaders 관리사 자격과 TOPAS 항공예약 2급 자격을 통해 <strong>서비스 이론과 항공 예약 실무 지식</strong>을 함께 갖추었습니다.
+          응급처치 수료와 교육실습 중 안전동선 통제 경험은 <strong>승객 안전을 최우선으로 하는 지상조업 현장</strong>에 필요한 기본 소양이라 생각합니다.
+        </div>
+      </div>
+    </section>
+
+    <section id="strengths">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-label">Core Strengths</div>
+          <h2>핵심 역량 4가지</h2>
+        </div>
+        <div class="grid4">
+          <div class="card">
+            <div class="icon">✈</div>
+            <h3>항공 예약·발권 실무지식</h3>
+            <p>TOPAS 항공예약 2급 취득으로 예약·발권 시스템의 기본 구조를 이해하고 있어 체크인·EDI 업무 적응이 빠릅니다.</p>
+          </div>
+          <div class="card">
+            <div class="icon">♥</div>
+            <h3>서비스 마인드 &amp; CS 역량</h3>
+            <p>CS Leaders 관리사 자격과 호텔 프런트 실습 경험을 바탕으로 승객 요구사항을 신속히 파악하고 응대합니다.</p>
+          </div>
+          <div class="card">
+            <div class="icon">◆</div>
+            <h3>안전관리 &amp; 절차 준수</h3>
+            <p>응급처치 일반과정 수료, 현장체험학습 안전동선 통제 경험으로 규정을 준수하는 태도가 습관화되어 있습니다.</p>
+          </div>
+          <div class="card">
+            <div class="icon">●</div>
+            <h3>글로벌 커뮤니케이션</h3>
+            <p>TOEIC Speaking IH(140)와 필리핀 어학연수 경험이 있으며, 일본어 회화가 가능합니다. 현재 HSK·JLPT 자격증 취득을 준비 중입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="career" class="soft">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-label">Related Career</div>
+          <h2>직무 연관 경력</h2>
+          <p class="sub">예약 데이터 관리와 현장 고객 응대 중심의 서비스 현장 경력입니다.</p>
+        </div>
+
+        <div class="career-item">
+          <div class="career-period">
+            <span class="co">하얏트 제주 드림타워</span>
+            2023.06.28 ~ 2023.08.28
+            <span class="role-tag">인턴 · 예약/운영 지원</span>
+          </div>
+          <div class="career-body">
+            <h4>고객 응대 및 성수기 예약 상품·운영 관리 지원</h4>
+            <ul>
+              <li>하계 고성수기 예약 상품 및 고객 요청사항 전담 데이터 관리</li>
+              <li>주문 정보·수령 시각·세부 요청사항을 3단계 크로스 체크 프로세스로 사전 검증 → <span class="result">예약 오배송·전달지연 0건 달성</span></li>
+              <li>대규모 투숙객·방문객 대상 현장 동선 안내 및 수령 절차 지원, 선제적 응대로 현장 혼잡도 완화</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="career-item">
+          <div class="career-period">
+            <span class="co">켄싱턴 호텔 가평점</span>
+            2021.07.01 ~ 2021.07.31
+            <span class="role-tag">인턴 · 프런트/식음료</span>
+          </div>
+          <div class="career-body">
+            <h4>프런트·식음료 서비스 지원 및 현장 고객 응대</h4>
+            <ul>
+              <li>하계 시즌 방문 고객 대상 시설 및 이용 절차 안내</li>
+              <li>고객 요구사항을 신속히 파악하고 불편사항 발생 시 즉각 대응</li>
+              <li>첫 서비스 현장 실습을 통해 서비스 마인드와 규정 준수의 중요성 체득</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-label">Related Experience</div>
+          <h2>직무 연관 경험</h2>
+          <p class="sub">현장 안내, 동선 관리, 서비스 품질에 대한 감각을 키운 경험들입니다.</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card">
+            <div class="top"><h4>제8회 아태 안티에이징 컨퍼런스 운영 스태프</h4><span class="period">2025.09</span></div>
+            <p>대규모 행사장 내 이동 동선 및 세션·부스 위치 안내, 종합 안내데스크 운영으로 국내외 참가자 문의 응대 및 혼잡 구간을 관리했습니다.</p>
+            <div class="tagrow"><span>동선안내</span><span>안내데스크</span><span>혼잡관리</span></div>
+          </div>
+          <div class="exp-card">
+            <div class="top"><h4>경남관광고등학교 교육실습생</h4><span class="period">2026.05</span></div>
+            <p>교내외 현장 체험·활동 시 학생 동선을 관리해 안전사고를 예방하고, 규정과 일정을 준수하며 책임감 있게 실습 과정을 완수했습니다.</p>
+            <div class="tagrow"><span>안전동선통제</span><span>규정준수</span></div>
+          </div>
+          <div class="exp-card">
+            <div class="top"><h4>STI West Negros University 단기 어학연수</h4><span class="period">2025.12~2026.01</span></div>
+            <p>현지 레지던스호텔 시타딘 현장체험학습으로 서비스 현장의 시설 구조·고객 동선·안내 체계를 학습했고, 다양한 문화적 배경의 현지인들과 교류하며 글로벌 소통 자신감을 키웠습니다.</p>
+            <div class="tagrow"><span>글로벌커뮤니케이션</span><span>서비스현장학습</span></div>
+          </div>
+          <div class="exp-card">
+            <div class="top"><h4>코레일유통 공공기관 직무체험</h4><span class="period">2025.08</span></div>
+            <p>미스터리 쇼퍼로 매장을 방문해 직원 응대 태도·서비스 친절도를 객관적으로 평가하며, 승객이 체감하는 디테일한 서비스 요소를 파악하는 관점을 길렀습니다.</p>
+            <div class="tagrow"><span>서비스품질평가</span><span>고객관점</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certs" class="soft">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-label">Certificates &amp; Language</div>
+          <h2>자격증 및 어학</h2>
+        </div>
+        <table class="cert-table">
+          <tr>
+            <th>구분</th><th>자격/어학명</th><th>취득일</th><th>발급기관</th>
+          </tr>
+          <tr>
+            <td>자격증</td>
+            <td class="name">TOPAS 항공예약 2급 <span class="pill-fit">EDI·발권 직결</span></td>
+            <td>2025.11.24</td>
+            <td>토파스여행정보</td>
+          </tr>
+          <tr>
+            <td>자격증</td>
+            <td class="name">CS Leaders 관리사 <span class="pill-fit">서비스 직결</span></td>
+            <td>2026.04.17</td>
+            <td>한국정보평가협회</td>
+          </tr>
+          <tr>
+            <td>어학</td>
+            <td class="name">TOEIC Speaking IH (140)</td>
+            <td>2025.06.08</td>
+            <td>YBM 한국 TOEIC위원회</td>
+          </tr>
+          <tr>
+            <td>어학</td>
+            <td class="name">HSK (중국어) <span class="pill-plan">취득 예정</span></td>
+            <td>취득 예정</td>
+            <td>중국 한어수평고시(HSK) 사무국</td>
+          </tr>
+          <tr>
+            <td>어학</td>
+            <td class="name">JLPT (일본어) <span class="pill-plan">취득 예정</span></td>
+            <td>취득 예정</td>
+            <td>일본국제교육지원협회</td>
+          </tr>
+          <tr>
+            <td>이수교육</td>
+            <td class="name">응급처치 일반과정(8H) <span class="pill-fit">안전관리 직결</span></td>
+            <td>2026.09.12</td>
+            <td>대한적십자사</td>
+          </tr>
+        </table>
+        <p class="note-line"><b>일본어</b>는 자격증 취득 전이지만 회화가 가능한 수준이며, 다국어 응대 역량 강화를 위해 HSK·JLPT 자격증 취득을 준비하고 있습니다.</p>
+      </div>
+    </section>
+
+    <section id="closing">
+      <div class="wrap">
+        <div class="closing-quote">
+          <div class="qmark">"</div>
+          <h3>안전(Safety)과 신뢰(Trust)를 최우선으로,<br>현장에서 바로 뛰는 인재가 되겠습니다</h3>
+          <p>정확한 예약·발권 실무지식과 서비스 현장에서 다져온 대응력을 바탕으로, JAS가 지향하는 안전한 지상조업 운영에 책임감 있게 기여하고 싶습니다. 사소한 불편도 먼저 살피는 태도로 승객과 항공사 모두에게 신뢰받는 지상직원이 되겠습니다.</p>
+          <div class="closing-stats">
+            <div class="st"><div class="k">체크인·수하물 서비스 이해</div><div class="v">✓ 준비 완료</div></div>
+            <div class="st"><div class="k">예약 데이터 정확도</div><div class="v">0건 오류</div></div>
+            <div class="st"><div class="k">외국어 커뮤니케이션</div><div class="v">영어 IH등급</div></div>
+            <div class="st"><div class="k">현장 안전관리 경험</div><div class="v">다수 보유</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <b>김하경</b> · JAS 인천공항 | 김포공항 공항서비스직 지원 포트폴리오 · 2026
+    </div>
+  </footer>
+
+</body>
+</html>
